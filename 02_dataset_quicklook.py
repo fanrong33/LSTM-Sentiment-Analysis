@@ -51,8 +51,6 @@ plt.show()
 
 
 
-
-
 '''
 Possitive files finished
 Negative files finished
@@ -60,8 +58,3 @@ The total number of files is 25000
 The total number of words in the files is 5758410
 The average number of words in the files is 230
 '''
-
-
-
-
-

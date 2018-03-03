@@ -10,6 +10,10 @@ i thought the movie was good
 
 3、调用embedding_lookup，将词向量嵌入到句子索引中，输出句子的词向量
 tf.nn.embedding_lookup(word_vectors, sentence)
+
+tf.nn.embedding_lookup函数原理？
+embedding_lookup(params, ids)其实就是按照ids顺序返回params中的第ids行。
+比如说，ids=[1,3,2],就是返回params中第1,3,2行。返回结果为由params的1,3,2行组成的tensor.
 """
 
 import numpy as np
@@ -77,8 +81,9 @@ print(first_sentence) # 索引位置
 ''' [    41    804 201534   1005     15   7446      5  13767      0      0] '''
 
 with tf.Session() as sess:
+    input_embedding = tf.nn.embedding_lookup(word_vectors, first_sentence)
     # 查表嵌入
-    print(tf.nn.embedding_lookup(word_vectors, first_sentence).eval().shape)
+    print(input_embedding.eval().shape)
     '''
     (10, 50)
     '''

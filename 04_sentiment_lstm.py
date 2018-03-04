@@ -84,7 +84,7 @@ def get_train_batch(batch_size, max_seq_length):
     for i in range(batch_size):
         if (i % 2 == 0):
             num = randint(1, 11499)
-            labels.append([1, 0]) # 正
+            labels.append([1, 0]) # 正 One-hot编码，跟mnist一样
         else:
             num = randint(13499, 24999)
             labels.append([0, 1]) # 负
